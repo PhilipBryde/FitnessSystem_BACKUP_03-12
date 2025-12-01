@@ -115,7 +115,7 @@
             FontSize="11"
             Background="LightBlue"
             Foreground="Black"
-            Margin="0,215,0,0" Click="GoToRegisterWindow_Click"/>
+            Margin="0,215,0,0" Click="Button_Register_Click"/>
 
     </Grid>
 </Window>

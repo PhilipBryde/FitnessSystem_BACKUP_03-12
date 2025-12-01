@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace FitnessProgram
 {
@@ -19,11 +7,29 @@ namespace FitnessProgram
     /// </summary>
     public partial class NextWindow : Window
     {
+        // Required WPF Constructor 
         public NextWindow()
         {
             InitializeComponent();
         }
 
+        // Store logged-in member + fitness system reference philip
+        private Member _member;
+        private Fitness _fitness;
+
+        // This constructor is used when navigating from MainWindow philip
+        public NextWindow(Member member, Fitness fitness)
+        {
+            InitializeComponent();
+
+            _member = member;     // save reference to logged-in user
+            _fitness = fitness;   // save reference to system controller
+
+            // Show welcome message
+            WelcomeText.Text = $"Velkommen {member.name}!";
+        }
+
+        // --- Button: Open Member Window --- Philip
         private void GoToMembers_Click(object sender, RoutedEventArgs e)
         {
             MemberWindow member = new MemberWindow();
@@ -31,6 +37,7 @@ namespace FitnessProgram
             this.Close();
         }
 
+        // --- Fun botton --- Sidney
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             for (int i = 0; i < 1000; i++)
@@ -40,6 +47,7 @@ namespace FitnessProgram
             }
         }
 
+        // --- Button: Open Activity Window --- philip
         private void GoToActivity_Click(object sender, RoutedEventArgs e)
         {
             ActivityWindow activity = new ActivityWindow();
@@ -47,14 +55,12 @@ namespace FitnessProgram
             this.Close();
         }
 
-        //Philip Kode 
+        // --- Button: Go back to Main Menu --- philip
         private void GoToMainWindow_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
-
         }
-
     }
 }

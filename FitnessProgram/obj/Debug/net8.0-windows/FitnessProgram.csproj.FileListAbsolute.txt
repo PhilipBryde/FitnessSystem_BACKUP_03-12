@@ -55,6 +55,7 @@ C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\bin\Debug\net8.0-wi
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\bin\Debug\net8.0-windows\FitnessProgram.dll
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\bin\Debug\net8.0-windows\FitnessProgram.pdb
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\NextWindow.baml
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MemberTestWindow.g.cs
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MemberWindow.g.cs
@@ -66,7 +67,6 @@ C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-wi
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\FitnessProgram_MarkupCompile.lref
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MemberTestWindow.baml
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\MemberWindow.baml
-C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\NextWindow.baml
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\RegisterWindow.baml
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\TestWindow.baml
 C:\Users\bryde\Documents\GitHub\FitnessSystem\FitnessProgram\obj\Debug\net8.0-windows\FitnessProgram.g.resources

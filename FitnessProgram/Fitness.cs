@@ -36,5 +36,32 @@ namespace FitnessProgram
         {
             return memberList;
         }
+
+        // Login
+        public Member Authenticate(string username, string password)
+        {
+            if (!int.TryParse(password, out int id))
+                return null;
+
+            return memberList.FirstOrDefault(m =>
+            m.name.Equals(username, StringComparison.OrdinalIgnoreCase)
+            && m.id == id);
+        }
+
+
+        // REGISTER (opret nyt medlem)
+        public Member Register(string name, char gender, int age)
+        {
+            int newId = (memberList.Count > 0) ? memberList.Max(m => m.id) + 1 : 1;
+
+            Member newMember = new Member(newId, name, gender);
+            memberList.Add(newMember);
+
+            return newMember;
+
+
+
+        }
     }
+
 }

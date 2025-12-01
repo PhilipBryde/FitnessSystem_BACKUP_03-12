@@ -6,8 +6,16 @@
         xmlns:local="clr-namespace:FitnessProgram"
         mc:Ignorable="d"
         Title="MemberTestWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock x:Name="ActivityBlock" HorizontalAlignment="Center" Margin="1,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center"/>
+    <Grid Background="Black">
+        <TextBlock
+            Foreground="White"
+            x:Name="ActivityBlock" 
+            HorizontalAlignment="Center" 
+            Margin="1,0,0,0" 
+            TextWrapping="Wrap" 
+            Text="TextBlock" 
+            VerticalAlignment="Center"/>
+            
 
     </Grid>
 </Window>

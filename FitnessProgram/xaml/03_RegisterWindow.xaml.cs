@@ -28,17 +28,17 @@ namespace FitnessProgram
         }
 
         // Håndterer klik på knappen 'Opret Bruger'.
-        private void Button_Create_Click(object sender, RoutedEventArgs e)
+        private void CreateMember_Click(object sender, RoutedEventArgs e)
         {
             // Henter input fra tekstfelterne.
             string name = NameInput.Text;
             // Tager det første bogstav i Køn, ellers standard 'M'.
-            char gender = GenderInput.Text.Length > 0 ? GenderInput.Text[0] : 'M';
+            char gender = GenderInput.Text.Length > 0 ? GenderInput.Text[0] : 'M'; 
 
-            // Forsøger at konvertere Alder til et tal.
+            
             if (!int.TryParse(AgeInput.Text, out int age))
             {
-                // Viser fejlbesked, hvis Alder ikke er et tal.
+                // Hvis der ikke kan konverteres til en int Vises denne fejlbesked.
                 MessageBox.Show("Alder skal være et tal.");
                 return;
             }
@@ -46,7 +46,7 @@ namespace FitnessProgram
             Member newMember = _fitness.Register(name, gender, age);
 
             // Kalder metode for at gemme det nye medlem i filen.
-            SaveMemberToFile(newMember);
+            _fitness.SaveMemberToFile(newMember);
 
             // Viser bekræftelse af oprettelse og login-information.
             MessageBox.Show($"Bruger oprettet! \nDit Brugernavn er {newMember.name} \nDit Adgangskode er {newMember.id}");
@@ -54,12 +54,13 @@ namespace FitnessProgram
             this.Close();
         }
 
-        private void SaveMemberToFile(Member member) //Metode der gemmer ny medlem i text filen, tager den nye medlem som input -- Sidney
+        /*private void SaveMemberToFile(Member member) //Metode der gemmer ny medlem i text filen, tager den nye medlem som input -- Sidney
         {
             string filePath = @"MemberList.txt"; //Gemmer stien til textfilen
             string m = $"ID: {member.id}, Navn: {member.name}, Køn: {member.gender}"; //Opretter ny string med medlemmets infomation
             File.AppendAllText(filePath, Environment.NewLine + m); //Bliver gemt i filen
 
-        }
+        }*/
+
     }
 }

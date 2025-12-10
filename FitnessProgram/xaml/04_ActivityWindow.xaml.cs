@@ -21,8 +21,8 @@ namespace FitnessProgram
         {
             InitializeComponent();
             // Tilføjer null-checks for robusthed (baseret på tidligere korrektioner)
-            this.fitness = fitness ?? throw new ArgumentNullException(nameof(fitness));
-            this.member = member ?? throw new ArgumentNullException(nameof(member));
+            this.fitness = fitness;
+            this.member = member;
 
             ShowActivity();
             ApplyRoleRestrictions(); // fjerner admin controls if not admin
@@ -286,7 +286,7 @@ namespace FitnessProgram
         {
             if (!int.TryParse(TypeActivityIn?.Text, out int activityIndex))
             {
-                MessageBox.Show("Indtast et gyldigt aktivitetsnummer 1-5.");
+                MessageBox.Show("Indtast et gyldigt aktivitetsnummer.");
                 return;
             }
 
@@ -299,9 +299,14 @@ namespace FitnessProgram
                 5 => Crossfit,
                 6 => extraAct,
                 7 => extraAct1,
+                _ => null,
             };
 
-            if (target == null) return;
+            if (target == null)
+            {
+                MessageBox.Show("Indtast et gyldigt aktivitetsnummer");
+                return;
+            }
 
             // ** FORMATERING BASERET PÅ ROLLE **
             string displayMember;
@@ -365,9 +370,13 @@ namespace FitnessProgram
                 5 => Crossfit,
                 6 => extraAct,
                 7 => extraAct1,
+                _ => null
             };
 
-            if (target == null) return;
+            if (target == null)
+            {
+                MessageBox.Show(" ");
+            }
 
             // Denne linje er kun til identifikation i metoden, men den fulde streng er ikke nødvendig for fjernelse takket være 'Contains'
             string memberLineToRemove;
@@ -484,7 +493,6 @@ namespace FitnessProgram
                 File.AppendAllText(filePath, Environment.NewLine + newActName); //Tilføjer den nye aktivitet til textfilen
                 ShowActivity();
                 MessageBox.Show($"Aktivitet {newActName} oprettet");
-                UpdateAllCapacities();
             }
         }
     }
